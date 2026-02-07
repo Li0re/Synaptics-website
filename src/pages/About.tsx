@@ -1,40 +1,55 @@
 import { Layout } from "@/components/layout/Layout";
-
-const experience = [
-  { company: "Design Studio", role: "Creative Director", period: "2022 — Present" },
-  { company: "Tech Company", role: "Senior Designer", period: "2019 — 2022" },
-  { company: "Agency Name", role: "Brand Designer", period: "2016 — 2019" },
-  { company: "Startup", role: "Product Designer", period: "2014 — 2016" },
-];
-
-const recognition = [
-  { title: "Awwwards Site of the Day", year: "2024" },
-  { title: "D&AD Wood Pencil", year: "2023" },
-  { title: "Communication Arts Award", year: "2023" },
-  { title: "CSS Design Awards", year: "2022" },
-];
-
-const speaking = [
-  { event: "Design Conference", location: "New York", year: "2024" },
-  { event: "Brand Summit", location: "London", year: "2023" },
-  { event: "Creative Mornings", location: "Los Angeles", year: "2023" },
-];
-
-const clients = [
-  "Apple", "Google", "Spotify", "Nike", "Airbnb", "Stripe", 
-  "Notion", "Figma", "Linear", "Vercel", "Pitch", "Framer"
-];
-
+const experience = [{
+  company: "Design Studio",
+  role: "Creative Director",
+  period: "2022 — Present"
+}, {
+  company: "Tech Company",
+  role: "Senior Designer",
+  period: "2019 — 2022"
+}, {
+  company: "Agency Name",
+  role: "Brand Designer",
+  period: "2016 — 2019"
+}, {
+  company: "Startup",
+  role: "Product Designer",
+  period: "2014 — 2016"
+}];
+const recognition = [{
+  title: "Awwwards Site of the Day",
+  year: "2024"
+}, {
+  title: "D&AD Wood Pencil",
+  year: "2023"
+}, {
+  title: "Communication Arts Award",
+  year: "2023"
+}, {
+  title: "CSS Design Awards",
+  year: "2022"
+}];
+const speaking = [{
+  event: "Design Conference",
+  location: "New York",
+  year: "2024"
+}, {
+  event: "Brand Summit",
+  location: "London",
+  year: "2023"
+}, {
+  event: "Creative Mornings",
+  location: "Los Angeles",
+  year: "2023"
+}];
+const clients = ["Apple", "Google", "Spotify", "Nike", "Airbnb", "Stripe", "Notion", "Figma", "Linear", "Vercel", "Pitch", "Framer"];
 const About = () => {
-  return (
-    <Layout variant="light">
+  return <Layout variant="light">
       <div className="bg-white min-h-screen">
         {/* Hero Section */}
         <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-white">
           <div className="container">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-black leading-[1.1] tracking-[-0.02em] max-w-6xl">
-              I am a New York based designer and creative director. My career spans over 15 years in the industry building products, digital experiences and brands that play meaningful roles in people's lives.
-            </h1>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-black leading-[1.1] tracking-[-0.02em] max-w-6xl">We are a France based agency changing the horizons. Our career spans over years in the industry building products, digital experiences and brands that play meaningful roles in people's lives.</h1>
           </div>
         </section>
 
@@ -50,14 +65,12 @@ const About = () => {
                 <div>
                   <h3 className="text-xs uppercase tracking-[0.15em] font-medium text-gray-500 mb-6">Work</h3>
                   <div className="space-y-5">
-                    {experience.map((item, index) => (
-                      <div key={index}>
+                    {experience.map((item, index) => <div key={index}>
                         <p className="text-sm font-medium text-black uppercase tracking-wide">{item.company}</p>
                         <p className="text-sm text-gray-500">
                           {item.role}
                         </p>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </div>
 
@@ -65,9 +78,7 @@ const About = () => {
                 <div>
                   <h3 className="text-xs uppercase tracking-[0.15em] font-medium text-gray-500 mb-6">Jury</h3>
                   <div className="space-y-2">
-                    {recognition.map((item, index) => (
-                      <p key={index} className="text-sm text-gray-600">{item.title}</p>
-                    ))}
+                    {recognition.map((item, index) => <p key={index} className="text-sm text-gray-600">{item.title}</p>)}
                   </div>
                 </div>
 
@@ -75,11 +86,9 @@ const About = () => {
                 <div>
                   <h3 className="text-xs uppercase tracking-[0.15em] font-medium text-gray-500 mb-6">Speaker</h3>
                   <div className="space-y-2">
-                    {speaking.map((item, index) => (
-                      <p key={index} className="text-sm text-gray-600">
+                    {speaking.map((item, index) => <p key={index} className="text-sm text-gray-600">
                         {item.event} ({item.location})
-                      </p>
-                    ))}
+                      </p>)}
                   </div>
                 </div>
               </div>
@@ -119,20 +128,13 @@ const About = () => {
           <div className="container">
             <h3 className="text-xs uppercase tracking-[0.15em] font-medium text-gray-500 mb-10">Select Clients</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-              {clients.map((client) => (
-                <div 
-                  key={client} 
-                  className="text-base font-medium text-gray-600 hover:text-black transition-colors"
-                >
+              {clients.map(client => <div key={client} className="text-base font-medium text-gray-600 hover:text-black transition-colors">
                   {client}
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </section>
       </div>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default About;
