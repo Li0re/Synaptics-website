@@ -1,48 +1,40 @@
 import { Layout } from "@/components/layout/Layout";
-const experience = [{
-  company: "Design Studio",
-  role: "Creative Director",
-  period: "2022 — Present"
+const services = [{
+  name: "AI Agents",
+  description: "Custom intelligent assistants"
 }, {
-  company: "Tech Company",
-  role: "Senior Designer",
-  period: "2019 — 2022"
+  name: "Workflow Automation",
+  description: "n8n, Make, Zapier integrations"
 }, {
-  company: "Agency Name",
-  role: "Brand Designer",
-  period: "2016 — 2019"
+  name: "Process Optimization",
+  description: "End-to-end automation solutions"
 }, {
-  company: "Startup",
-  role: "Product Designer",
-  period: "2014 — 2016"
+  name: "AI Consulting",
+  description: "Strategy & implementation"
 }];
-const recognition = [{
-  title: "Awwwards Site of the Day",
+const technologies = [{
+  name: "n8n",
+}, {
+  name: "OpenAI / Claude"
+}, {
+  name: "LangChain"
+}, {
+  name: "Make / Zapier"
+}];
+const achievements = [{
+  event: "AI Automation Summit",
+  location: "Paris",
+  year: "2025"
+}, {
+  event: "No-Code Conference",
+  location: "Berlin",
   year: "2024"
 }, {
-  title: "D&AD Wood Pencil",
-  year: "2023"
-}, {
-  title: "Communication Arts Award",
-  year: "2023"
-}, {
-  title: "CSS Design Awards",
-  year: "2022"
-}];
-const speaking = [{
-  event: "Design Conference",
-  location: "New York",
+  event: "Tech Meetup France",
+  location: "Lyon",
   year: "2024"
-}, {
-  event: "Brand Summit",
-  location: "London",
-  year: "2023"
-}, {
-  event: "Creative Mornings",
-  location: "Los Angeles",
-  year: "2023"
 }];
-const clients = ["Apple", "Google", "Spotify", "Nike", "Airbnb", "Stripe", "Notion", "Figma", "Linear", "Vercel", "Pitch", "Framer"];
+const clients = ["TechStartup", "E-commerce Co", "SaaS Platform", "Marketing Agency", "FinTech", "HealthTech"];
 const About = () => {
   return <Layout variant="light">
       <div className="bg-white min-h-screen">
@@ -61,32 +53,32 @@ const About = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12">
               {/* Left Column - Lists */}
               <div className="lg:col-span-4 space-y-14">
-                {/* Experience */}
+                {/* Services */}
                 <div>
-                  <h3 className="text-xs uppercase tracking-[0.15em] font-medium text-gray-500 mb-6">Work</h3>
+                  <h3 className="text-xs uppercase tracking-[0.15em] font-medium text-gray-500 mb-6">Services</h3>
                   <div className="space-y-5">
-                    {experience.map((item, index) => <div key={index}>
-                        <p className="text-sm font-medium text-black uppercase tracking-wide">{item.company}</p>
+                    {services.map((item, index) => <div key={index}>
+                        <p className="text-sm font-medium text-black uppercase tracking-wide">{item.name}</p>
                         <p className="text-sm text-gray-500">
-                          {item.role}
+                          {item.description}
                         </p>
                       </div>)}
                   </div>
                 </div>
 
-                {/* Recognition */}
+                {/* Technologies */}
                 <div>
-                  <h3 className="text-xs uppercase tracking-[0.15em] font-medium text-gray-500 mb-6">Jury</h3>
+                  <h3 className="text-xs uppercase tracking-[0.15em] font-medium text-gray-500 mb-6">Tech Stack</h3>
                   <div className="space-y-2">
-                    {recognition.map((item, index) => <p key={index} className="text-sm text-gray-600">{item.title}</p>)}
+                    {technologies.map((item, index) => <p key={index} className="text-sm text-gray-600">{item.name}</p>)}
                   </div>
                 </div>
 
-                {/* Speaking */}
+                {/* Achievements */}
                 <div>
-                  <h3 className="text-xs uppercase tracking-[0.15em] font-medium text-gray-500 mb-6">Speaker</h3>
+                  <h3 className="text-xs uppercase tracking-[0.15em] font-medium text-gray-500 mb-6">Events</h3>
                   <div className="space-y-2">
-                    {speaking.map((item, index) => <p key={index} className="text-sm text-gray-600">
+                    {achievements.map((item, index) => <p key={index} className="text-sm text-gray-600">
                         {item.event} ({item.location})
                       </p>)}
                   </div>
@@ -97,40 +89,28 @@ const About = () => {
               <div className="lg:col-span-8">
                 <div className="max-w-2xl">
                   <p className="text-lg md:text-xl text-black mb-8 leading-relaxed">
-                    For over a decade, I've been helping startups and established companies 
-                    tell their stories through design. I believe that great brands are built 
-                    on clarity—knowing who you are, who you serve, and what you stand for.
+                    We're Synaptics—a young, ambitious team passionate about harnessing the power 
+                    of AI to transform how businesses operate. We build intelligent agents and 
+                    seamless automations that free you to focus on what truly matters.
                   </p>
                   <p className="text-base text-gray-600 mb-6 leading-relaxed">
-                    My approach is rooted in strategy, but expressed through craft. I start 
-                    every project by asking hard questions: What's the real problem we're 
-                    solving? What does success look like? Only after understanding the 
-                    fundamentals do I move into visual exploration.
+                    Our approach is hands-on and collaborative. We start by understanding your 
+                    unique workflows and pain points, then design custom solutions using cutting-edge 
+                    tools like n8n, Make, and advanced AI models. No cookie-cutter solutions—every 
+                    automation is tailored to your specific needs.
                   </p>
                   <p className="text-base text-gray-600 mb-6 leading-relaxed">
-                    I've had the privilege of working with companies at every stage—from 
-                    pre-launch startups finding their voice to Fortune 500 companies 
-                    reimagining their visual identity. Each project teaches me something 
-                    new about the power of design to shape perception and drive action.
+                    Founded in 2024, we've quickly built a reputation for delivering results. 
+                    From streamlining customer support with AI chatbots to automating complex 
+                    data pipelines, we've helped startups and growing companies save countless 
+                    hours and scale faster than they thought possible.
                   </p>
                   <p className="text-base text-gray-600 leading-relaxed">
-                    I'm currently available for select projects and consulting engagements. 
-                    If you're working on something interesting, I'd love to hear about it.
+                    We're currently taking on new projects and love tackling interesting challenges. 
+                    If you're ready to bring AI into your workflow, let's talk.
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Clients Section */}
-        <section className="py-20 md:py-24 bg-white border-t border-gray-200">
-          <div className="container">
-            <h3 className="text-xs uppercase tracking-[0.15em] font-medium text-gray-500 mb-10">Select Clients</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-              {clients.map(client => <div key={client} className="text-base font-medium text-gray-600 hover:text-black transition-colors">
-                  {client}
-                </div>)}
             </div>
           </div>
         </section>
