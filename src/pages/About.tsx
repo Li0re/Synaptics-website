@@ -41,7 +41,7 @@ const About = () => {
         {/* Hero Section */}
         <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-white">
           <div className="container">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-black leading-[1.1] tracking-[-0.02em] max-w-6xl">We are a France based agency changing the horizons. Our career spans over years in the industry building products, digital experiences and brands that play meaningful roles in people's lives.</h1>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-black leading-[1.1] tracking-[-0.02em] max-w-6xl">We are Synaptics, a Paris-based agency crafting AI agents, intelligent automations, and custom SaaS solutions. We blend cutting-edge AI with thoughtful web design and development to build products that transform how businesses operate.</h1>
           </div>
         </section>
 
