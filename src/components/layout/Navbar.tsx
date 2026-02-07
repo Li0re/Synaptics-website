@@ -78,8 +78,8 @@ export function Navbar({
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={cn("text-xs uppercase tracking-wide font-medium transition-colors inline-flex items-center gap-1", isDark ? "text-gray-400 hover:text-white" : "text-gray-500 hover:text-black")}>
               IG<span className="text-[10px]">↗</span>
             </a>
-            <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" className={cn("text-xs uppercase tracking-wide font-medium transition-colors inline-flex items-center gap-1", isDark ? "text-gray-400 hover:text-white" : "text-gray-500 hover:text-black")}>
-              DRIB<span className="text-[10px]">↗</span>
+            <a target="_blank" rel="noopener noreferrer" className={cn("text-xs uppercase tracking-wide font-medium transition-colors inline-flex items-center gap-1", isDark ? "text-gray-400 hover:text-white" : "text-gray-500 hover:text-black")} href="https://instagram.com">
+              IG<span className="text-[10px]">↗</span>
             </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={cn("text-xs uppercase tracking-wide font-medium transition-colors inline-flex items-center gap-1", isDark ? "text-gray-400 hover:text-white" : "text-gray-500 hover:text-black")}>
               LIN<span className="text-[10px]">↗</span>
