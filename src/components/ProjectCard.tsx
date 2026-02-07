@@ -10,7 +10,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, index, variant = "large" }: ProjectCardProps) {
   const isLarge = variant === "large";
-  const cardRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLAnchorElement>(null);
   const [parallaxOffset, setParallaxOffset] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
