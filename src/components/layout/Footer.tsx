@@ -51,7 +51,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <p className="text-sm text-gray-600">
-            © {new Date().getFullYear()} Marco Coppeto. All rights reserved.
+            © {new Date().getFullYear()} SYNAPTICS. All rights reserved.
           </p>
           <nav className="flex items-center gap-8">
             <Link to="/" className="text-sm text-gray-500 hover:text-white transition-colors">
