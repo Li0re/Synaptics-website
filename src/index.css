@@ -116,46 +116,63 @@
 
   html {
     scroll-behavior: smooth;
+    transition: background-color 0.6s ease;
+    /* Hidden Scrollbar */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+  }
+
+  /* Webkit Scrollbar */
+  html::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
   }
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Satoshi', system-ui, sans-serif;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 1.0625rem;
   }
 
   /* Typography utilities */
   .font-sans {
-    font-family: 'Satoshi', system-ui, sans-serif;
+    font-family: 'Outfit', system-ui, sans-serif;
+  }
+
+  .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
   }
 
   /* Editorial headline styles */
   .headline-xl {
-    @apply text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-[-0.02em];
+    @apply text-6xl md:text-8xl lg:text-9xl font-bold leading-[0.92] tracking-[-0.03em];
   }
 
   .headline-lg {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-[1] tracking-[-0.02em];
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] tracking-[-0.025em];
   }
 
   .headline-md {
-    @apply text-3xl md:text-4xl font-bold leading-[1.1] tracking-[-0.01em];
+    @apply text-4xl md:text-5xl font-bold leading-[1.05] tracking-[-0.015em];
   }
 
   .headline-sm {
-    @apply text-2xl md:text-3xl font-medium leading-[1.15];
+    @apply text-3xl md:text-4xl font-medium leading-[1.1];
   }
 
   /* Body text styles */
   .body-lg {
-    @apply text-lg md:text-xl leading-[1.6] font-light;
+    @apply text-xl md:text-2xl leading-[1.6] font-light;
   }
 
   .body-md {
-    @apply text-base md:text-lg leading-[1.7];
+    @apply text-lg md:text-xl leading-[1.7];
   }
 
   .body-sm {
-    @apply text-sm leading-[1.6];
+    @apply text-base leading-[1.6];
   }
 
   /* Label styles */
@@ -190,4 +207,221 @@
   .hover-fade {
     @apply transition-opacity duration-200 ease-out hover:opacity-70;
   }
+}
+
+/* Page Transition Animations */
+.page-transition-wrapper {
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Chrome / Metallic word hover effect */
+.chrome-word {
+  display: inline-block;
+  position: relative;
+  color: #999;
+  transition: color 0.4s ease;
+  cursor: default;
+  padding-bottom: 0.15em;
+  margin-bottom: -0.15em;
+}
+
+.chrome-word:hover {
+  color: transparent;
+  background: linear-gradient(135deg,
+      #e8e8e8 0%,
+      #b0b0b0 20%,
+      #ffffff 40%,
+      #a0a0a0 60%,
+      #d0d0d0 80%,
+      #ffffff 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: chrome-shine 1.5s ease infinite;
+}
+
+@keyframes chrome-shine {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Language switch + page background transition */
+html body {
+  transition: opacity 0.2s ease, background-color 0.6s ease;
+}
+
+html.lang-transitioning body {
+  opacity: 0;
+}
+
+/* Infinite Marquee */
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee-scroll 30s linear infinite;
+  will-change: transform;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #bbb;
+  padding: 0 0.25rem;
+}
+
+.marquee-dot {
+  margin: 0 1rem;
+  color: #ddd;
+  font-size: 0.6rem;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+/* Light Rays Container */
+.light-rays-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 3s ease infinite;
+}
+
+/* Wave Animations */
+.animate-wave-slow {
+  animation: wave 15s linear infinite;
+  /* Slowed down base speed */
+  width: 200%;
+  will-change: transform;
+}
+
+.animate-wave-slower {
+  animation: wave 25s linear infinite;
+  /* Very slow background layer */
+  width: 200%;
+  will-change: transform;
+}
+
+.animate-wave-faster {
+  animation: wave 10s linear infinite;
+  /* Faster foreground or accent */
+  width: 200%;
+  will-change: transform;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-25%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Floating Animation */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Chrome/Shine Text Animation */
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+.animate-shine-text {
+  /* Gradient: Gray -> White -> Gray */
+  background: linear-gradient(to right,
+      #9ca3af 40%,
+      #ffffff 50%,
+      #9ca3af 60%);
+  /* Make background larger so the "shine" moves across */
+  background-size: 200% auto;
+
+  /* Text clipping */
+  color: #9ca3af;
+  /* Fallback */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Animation */
+  animation: shimmer 3s linear infinite;
+  display: inline-block;
+  /* Helps with some browser rendering */
 }
